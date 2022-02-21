@@ -109,7 +109,7 @@ ce service doit être testé avec ```rspec```
 spec/services/jewel_destroy.rb
 ```
 
-### 2 Il y a un service object.
+### 2 Il y a un service object qui.
 
 qui peut créer un bijoutier avec des bijoux
 utilisé pour initialisé votre application (seed)
