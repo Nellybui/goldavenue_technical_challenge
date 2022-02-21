@@ -65,6 +65,7 @@ implémentez les fonctionnalités suivante
 #### Sénario 1 Une home page basique
 
 ```cucumber
+Étant donnée des bijoutiers avec des bijoux
 Lorsque je suis sur la home page 
 Alors je vois le nombre de bijoutier
 Et je vois les type de bijoux (or, argent, fer...)
@@ -80,6 +81,7 @@ Note : il doit y avoir un lien vers  les ressources :
 #### Sénario 2 statistique des finances
 
 ```cucumber
+Étant donnée des bijoutiers avec des bijoux
 Lorsque je suis sur la home page 
 Alors je vois la somme total de bijoux ville (tout les bijoux de tout les bijoutier).
 Et je vois la somme total par type et par pierre
@@ -87,8 +89,9 @@ Et je vois la somme total par type et par pierre
 
 #### Sénario 3 suppression de bijou
 ```cucumber
-Étant donnée que je suis sur la home page
-lorsque je navigue jusqu'à la page d'un bijoux
+Étant donnée des bijoutiers avec des bijoux
+Et que je suis sur la home page
+Lorsque je navigue jusqu'à la page d'un bijoux
 Et que je le supprime
 Et que je reviens à la home page
 Alors les totaux ont été recalculé
