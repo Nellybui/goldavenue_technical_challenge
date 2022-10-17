@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "error_explanation" do %>
+  <% if obj.errors.any? %>
+    <h3>
+      <%= pluralize(obj.errors.count, "error") %> prohibited
+      this <%= obj.class.name.demodulize.titlecase.downcase %> from being saved:
+    </h3>
+    <ul>
+      <% obj.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

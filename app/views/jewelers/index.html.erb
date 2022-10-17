@@ -1,0 +1,19 @@
+<% content_for :title, "Jewelers" %>
+<h1>Jewelers</h1>
+<h3><%= link_to "New Jeweler", new_jeweler_path %></h3>
+<table>
+  <tr>
+    <th style="text-align: left; padding-right:10px;"><strong>Name</strong></th>
+    <th style="text-align: right; padding-right:10px;"><strong>Wealth (CHF)</strong></th>
+    <th style="text-align: left; padding-right:10px;"><strong>Edit</strong></th>
+    <th style="text-align: left;"><strong>Delete</strong></th>
+  </tr>
+  <% @jewelers.each do |jeweler| %>
+    <tr>
+      <td style="padding-right:10px;"><%= link_to jeweler.name, jeweler_path(jeweler) %></td>
+      <td style="text-align: right; padding-right:10px;"><%= display_price(jeweler.wealth) %></td>
+      <td style="padding-right:10px;"><%= link_to "Edit", edit_jeweler_path(jeweler) %></td>
+      <td><%= link_to "Delete", jeweler, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,34 @@
+<% content_for :title, @jewel.name %>
+<h1><%= @jewel.name %> (<%= link_to "Edit", edit_jeweler_jewel_path(@jeweler, @jewel) %> | <%= link_to "Delete", [@jeweler, @jewel], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>)</h1>
+
+<h2>Price : CHF <%= display_price(@jewel.price) %></h2>
+
+<h2>Material</h2>
+<table>
+  <tr>
+    <th style="text-align: left; padding-right:10px;"><strong>Name</strong></th>
+    <th style="text-align: left; padding-right:10px;"><strong>Type</strong></th>
+    <th style="text-align: right;"><strong>Base Cost (CHF)</strong></th>
+  </tr>
+  <tr>
+    <td style="padding-right:10px;"><%= @material.name %></td>
+    <td style="padding-right:10px;"><%= @material.material_type.name %></td>
+    <td style="text-align: right;"><%= display_price(@material.base_cost) %></td>
+  </tr>
+</table>
+
+<h2>Stones</h2>
+<table>
+  <tr>
+    <th style="text-align: left; padding-right:10px;"><strong>Name</strong></th>
+    <th style="text-align: left; padding-right:10px;"><strong>Type</strong></th>
+    <th style="text-align: right;"><strong>Price (CHF)</strong></th>
+  </tr>
+  <% @stones.each do |stone| %>
+    <tr>
+      <td style="padding-right:10px;"><%= stone.name %></td>
+      <td style="padding-right:10px;"><%= stone.stone_type.name %></td>
+      <td style="text-align: right;"><%= display_price(stone.price) %></td>
+    </tr>
+  <% end %>
+</table>

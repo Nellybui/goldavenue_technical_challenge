@@ -1,0 +1,32 @@
+<% content_for :title, "Welcome to Bijouxville" %>
+<h1>There are <%= @jewelers.count %> <%= link_to "Jewelers", jewelers_path %> for a total value of CHF <%= display_price(@jewelers.map(&:wealth).sum) %></h1>
+
+<h1><%= link_to "Material Types", material_types_path %></h1>
+<table>
+  <tr>
+    <th style="text-align: left; padding-right:10px;"><strong>Name</strong></th>
+    <th style="text-align: right;"><strong>Value (CHF)</strong></th>
+  </tr>
+  <% @material_types.each do |material_type| %>
+    <% value = material_type.jewels.map(&:price).sum %>
+    <tr>
+      <td style="padding-right:10px;"><%= material_type.name %></td>
+      <td style="text-align: right;"><%= display_price(value) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h1><%= link_to "Stone Types", stone_types_path %></h1>
+<table>
+  <tr>
+    <th style="text-align: left; padding-right:10px;"><strong>Name</strong></th>
+    <th style="text-align: right;"><strong>Value (CHF)</strong></th>
+  </tr>
+  <% @stone_types.each do |stone_type| %>
+    <% value = stone_type.jewels.group(:id).map(&:price).sum %>
+    <tr>
+      <td style="padding-right:10px;"><%= stone_type.name %></td>
+      <td style="text-align: right;"><%= display_price(value) %></td>
+    </tr>
+  <% end %>
+</table>
