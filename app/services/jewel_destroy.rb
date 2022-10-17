@@ -9,7 +9,7 @@ class JewelDestroy < ApplicationService
   def call
     jeweler = @jewel.jeweler
     if success = @jewel.destroy
-      success &= JewelerWealthCalculator.call(jeweler)
+      JewelerWealthCalculator.call(jeweler)
     end
     success
   end

@@ -13,7 +13,7 @@
       <td style="padding-right:10px;"><%= link_to jeweler.name, jeweler_path(jeweler) %></td>
       <td style="text-align: right; padding-right:10px;"><%= display_price(jeweler.wealth) %></td>
       <td style="padding-right:10px;"><%= link_to "Edit", edit_jeweler_path(jeweler) %></td>
-      <td><%= link_to "Delete", jeweler, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></td>
+      <td><%= link_to "Delete", jeweler, data: { turbo_method: :delete }  %></td>
     </tr>
   <% end %>
 </table>

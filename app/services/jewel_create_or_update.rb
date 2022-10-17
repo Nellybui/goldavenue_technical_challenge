@@ -9,8 +9,8 @@ class JewelCreateOrUpdate < ApplicationService
   def call
     jeweler = @jewel.jeweler
     if success = @jewel.save
-      success &= JewelPriceCalculator.call(@jewel)
-      success &= JewelerWealthCalculator.call(jeweler)
+      JewelPriceCalculator.call(@jewel)
+      JewelerWealthCalculator.call(jeweler)
     end
     success
   end

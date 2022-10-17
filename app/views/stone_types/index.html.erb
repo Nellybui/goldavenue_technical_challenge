@@ -11,7 +11,7 @@
     <tr>
       <td style="padding-right:10px;"><%= stone_type.name %></td>
       <td style="padding-right:10px;"><%= link_to "Edit", edit_stone_type_path(stone_type) %></td>
-      <td><%= stone_type.stones_count == 0 ? link_to("Delete", stone_type, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) : "Can't Delete" %></td>
+      <td><%= stone_type.stones_count == 0 ? link_to("Delete", stone_type, data: { turbo_method: :delete }) : "Can't Delete" %></td>
     </tr>
   <% end %>
 </table>

@@ -1,5 +1,5 @@
 <% content_for :title, @jewel.name %>
-<h1><%= @jewel.name %> (<%= link_to "Edit", edit_jeweler_jewel_path(@jeweler, @jewel) %> | <%= link_to "Delete", [@jeweler, @jewel], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>)</h1>
+<h1><%= @jewel.name %> (<%= link_to "Edit", edit_jeweler_jewel_path(@jeweler, @jewel) %> | <%= link_to "Delete", [@jeweler, @jewel], data: { turbo_method: :delete } %>)</h1>
 
 <h2>Price : CHF <%= display_price(@jewel.price) %></h2>
 

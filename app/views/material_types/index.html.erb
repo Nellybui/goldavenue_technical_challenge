@@ -11,7 +11,7 @@
     <tr>
       <td style="padding-right:10px;"><%= material_type.name %></td>
       <td style="padding-right:10px;"><%= link_to "Edit", edit_material_type_path(material_type) %></td>
-      <td><%= material_type.materials_count == 0 ? link_to("Delete", material_type, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }) : "Can't Delete" %></td>
+      <td><%= material_type.materials_count == 0 ? link_to("Delete", material_type, data: { turbo_method: :delete }) : "Can't Delete" %></td>
     </tr>
   <% end %>
 </table>
