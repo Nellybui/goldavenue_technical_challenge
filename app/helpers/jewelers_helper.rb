@@ -1,0 +1,2 @@
+module JewelersHelper
+end

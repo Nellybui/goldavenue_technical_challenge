@@ -1,0 +1,15 @@
+<% content_for :title, @jeweler.new_record? ? "New Jeweler" : "Edit "+@jeweler.name %>
+<h1><%= @jeweler.new_record? ? "New Jeweler" : "Edit "+@jeweler.name %></h1>
+
+<%= form_with model: @jeweler do |form| %>
+  <%= render partial: 'layouts/errors', locals: { obj: @jeweler } %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="wrapper-div">
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :stone_type_id %>
+    <%= form.select :stone_type_id, @stone_types.map{|st| [st.name, st.id]} %>
+  </p>
+
+  <p>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </p>
+
+  <p>
+    <%= link_to_remove_nested(form, link_text: "Remove", fields_wrapper_selector: ".wrapper-div") %> <!-- adds a link to remove stone -->
+  </p>
+
+  <br>
+</div>

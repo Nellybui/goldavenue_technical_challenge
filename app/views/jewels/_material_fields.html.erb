@@ -1,0 +1,16 @@
+<div class="wrapper-div">
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :material_type_id %>
+    <%= form.select :material_type_id, @material_types.map{|mt| [mt.name, mt.id]} %>
+  </p>
+
+  <p>
+    <%= form.label :base_cost %>
+    <%= form.number_field :base_cost %>
+  </p>
+</div>

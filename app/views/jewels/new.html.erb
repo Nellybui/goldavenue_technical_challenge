@@ -1,0 +1,32 @@
+<% content_for :title, @jewel.new_record? ? "New Jewel" : "Edit "+@jewel.name %>
+<h1><%= @jewel.new_record? ? "New Jewel" : "Edit "+@jewel.name %></h1>
+
+<%= form_with model: [@jeweler, @jewel] do |form| %>
+  <%= render partial: 'layouts/errors', locals: { obj: @jewel } %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <h3>Material</h3>
+
+  <div id='material'>
+    <%= form.fields_for :material do |material_form| %>
+      <%= render 'material_fields', form: material_form %>
+    <% end %>
+  </div>
+
+  <h3>Stones</h3>
+
+  <div id='stones'>
+    <%= form.fields_for :stones do |stones_form| %>
+      <%= render 'stone_fields', form: stones_form %>
+    <% end %>
+  </div>
+  <%= link_to_add_nested(form, :stones, '#stones') %> <!-- adds a link to add more stones -->
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

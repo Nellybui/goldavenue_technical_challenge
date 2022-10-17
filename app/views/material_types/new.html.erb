@@ -1,0 +1,15 @@
+<% content_for :title, @material_type.new_record? ? "New Material Type" : "Edit "+@material_type.name %>
+<h1><%= @material_type.new_record? ? "New Material Type" : "Edit "+@material_type.name %></h1>
+
+<%= form_with model: @material_type do |form| %>
+  <%= render partial: 'layouts/errors', locals: { obj: @material_type } %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
