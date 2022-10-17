@@ -44,7 +44,7 @@ private
   end
 
   def find_stone_type
-    @stone_type = StoneType.find_by_id(params[:id])
+    render_not_found unless @stone_type = StoneType.find_by_id(params[:id])
   end
 
 end

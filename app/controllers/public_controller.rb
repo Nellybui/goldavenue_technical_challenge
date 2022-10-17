@@ -6,4 +6,8 @@ class PublicController < ApplicationController
     @stone_types = StoneType.order(:id).preload(:jewels)
   end
 
+  def routing_error
+    render_not_found
+  end
+
 end

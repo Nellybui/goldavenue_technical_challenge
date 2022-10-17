@@ -53,11 +53,11 @@ private
   end
 
   def find_jeweler
-    @jeweler = Jeweler.find_by_id(params[:jeweler_id])
+    render_not_found unless @jeweler = Jeweler.find_by_id(params[:jeweler_id])
   end
 
   def find_jewel
-    @jewel = @jeweler.jewels.find_by_id(params[:id])
+    render_not_found unless @jewel = @jeweler.jewels.find_by_id(params[:id])
   end
 
   def find_material_types

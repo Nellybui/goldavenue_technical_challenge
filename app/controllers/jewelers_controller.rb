@@ -48,7 +48,7 @@ private
   end
 
   def find_jeweler
-    @jeweler = Jeweler.find_by_id(params[:id])
+    render_not_found unless @jeweler = Jeweler.find_by_id(params[:id])
   end
 
 end

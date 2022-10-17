@@ -44,7 +44,7 @@ private
   end
 
   def find_material_type
-    @material_type = MaterialType.find_by_id(params[:id])
+    render_not_found unless @material_type = MaterialType.find_by_id(params[:id])
   end
 
 end
